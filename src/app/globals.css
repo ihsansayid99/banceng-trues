@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --green-light-color: #ADEE69;
+  --green-dark-color: #144618;
+  --black-color: #0D0B0A;
+  --red-color: #FF0000;
+  --yellow-color: #FFCC01;
+  --orange-color: #FC6E43;
+  --green-text-color: #95C11E;
+  --brown-dark-color: #353213;
+  --light-bg: #FDF8F2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: #fff;
+}
+
+@layer components {
+  .ball{
+    border-radius: 50%;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ball span {
+    position: absolute;
+    bottom: -30px;
+  }
+}
+
+@layer utilities {
+  .drag-area {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  .game-wrapper {
+    background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  .gamebox {
+    background-color: var(--green-dark-color);
+    border-radius: 10px;
+  }
+  .table {
+    width: 100%;
+    color: #fff;
+  }
+  .table thead tr {
+    border-bottom: 1px solid black;
+    font-size: 11px;
+  }
+  .table thead tr th {
+    padding-bottom: 1rem;
+  }
+  .table tbody tr td {
+    padding: 0.7rem;
+    text-align: center;
+  }
+  .table tfoot tr td {
+    text-align: center;
+  }
+}
