@@ -10,10 +10,11 @@ type Props = {
 
 const CustomRow: FC<Props> = ({ row, className = '', onClick }) => (
 	<tr {...row.getRowProps()} className={className} onClick={onClick}>
-		{row.cells.map((cell) => {
+		{row.cells.map((cell, index) => {
 			return (
 				<td
 					{...cell.getCellProps()}
+					key={index}
 					className={classNames({
 						'text-end min-w-100px': cell.column.id === 'actions',
 						'cursor-pointer': Boolean(onClick),

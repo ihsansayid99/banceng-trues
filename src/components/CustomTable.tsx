@@ -42,10 +42,10 @@ export const CustomTable: FC<Props> = ({ columns, data, withFooter = false, onCl
 				)}
 			</tbody>
 			<tfoot className='bg-success text-white'> 
-				{withFooter && rows.length > 0 && footerGroups.map((footerGroup) => (
-					<tr {...footerGroup.getFooterGroupProps()}>
+				{withFooter && rows.length > 0 && footerGroups.map((footerGroup, index) => (
+					<tr {...footerGroup.getFooterGroupProps()} key={index}>
 						{footerGroup.headers.map((column) => (
-							<td {...column.getFooterProps()}>{column.render('Footer')}</td>
+							<td {...column.getFooterProps()} key={index}>{column.render('Footer')}</td>
 						))}
 					</tr>
 				))}

@@ -110,7 +110,7 @@ export const BallWrapper: React.FC<BallProps> = ({ onClick, data }) => {
             );
           } else {
             return (
-              <Link href={'/game'}>
+              <Link href={'/game'} key={index}>
                 <motion.div
                   key={index}
                   className="ball cursor-pointer"
